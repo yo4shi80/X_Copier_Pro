@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "X Copier Pro",
+  "version": "1.0",
+  "description": "Xの投稿をテキスト、ユーザー情報、Markdown形式で簡単にコピーします。",
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "clipboardWrite",
+    "offscreen",
+    "notifications"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*"
+      ],
+      "js": [
+        "content_script.js"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "投稿をコピー"
+  }
+}
